@@ -90,8 +90,7 @@ class App extends Component {
           <ImageGallery images={images} openModal={this.toggleModal} />
         </div>
         
-
-        {isLoading && <h2>Loading...</h2>}
+        {isLoading && <h2 style={{color: "red", textAlign: "center"}}>Loading...</h2>}
 
         {images.length > 0 && <Button fetchGallery={this.fetchGallery} />}
         

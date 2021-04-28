@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './ImageGallery.module.css';
 
@@ -14,6 +15,16 @@ const ImageGallery = ({ images, openModal }) => {
       </ul>
     </>
   );
+};
+
+ImageGallery.defaultProps = {
+  images: [],
+  openModal: () => {},
+};
+
+ImageGallery.propTypes = {
+  images: PropTypes.array,
+  openModal: PropTypes.func,
 };
 
 export default ImageGallery;

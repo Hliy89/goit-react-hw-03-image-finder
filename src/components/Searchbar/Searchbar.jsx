@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Searchbar.module.css';
 
 class Searchbar extends Component {
   state = { query: '' };
 
-  // ---------------------------------------  handleChange
   handleChange = e => {
     this.setState({ query: e.currentTarget.value });
   };
 
-  // ---------------------------------------  handleSubmit
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state.query);
@@ -43,5 +42,13 @@ class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.defaultProps = {
+  onSubmit: () => {},
+};
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func,
+};
 
 export default Searchbar;
